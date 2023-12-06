@@ -129,9 +129,12 @@
   <ItemGroup>
     <ClCompile Include="ClassTester.cpp" />
     <ClCompile Include="clsCrypto.cpp" />
+    <ClCompile Include="clsCryptoEx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsCrypto.h" />
+    <ClInclude Include="clsCryptoEx.h" />
+    <ClInclude Include="clsProtoCrypto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,19 +1,23 @@
 ﻿#include <iostream>
 #include "clsCrypto.h"
+#include "clsCryptoEx.h"
 
 int main()
 {
-    clsCrypto* p_lobjCrypto;
+    clsCryptoEx* p_lobjCryptoEx;
 
         // vytvořit objekt
-        p_lobjCrypto = new clsCrypto();
+        p_lobjCryptoEx = new clsCryptoEx();
 
         // otevřít soubor
-        p_lobjCrypto->OpenFile("c:\\Tempy\\test.txt");
+        p_lobjCryptoEx->OpenFile(L"c:\\Temp\\test.txt", L"c:\\Temp\\testcrypt.txt");
+
+        // zašifrovat
+        p_lobjCryptoEx->Crypt();
 
         // zavřít soubor
-        p_lobjCrypto->CloseFile();
+        p_lobjCryptoEx->CloseFile();
 
         // zrušit objekt
-        delete(p_lobjCrypto);
+        delete(p_lobjCryptoEx);
 }

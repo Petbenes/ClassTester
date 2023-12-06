@@ -29,9 +29,15 @@ bool clsCrypto::OpenFile(const char* p_chNameSource, const char* p_chNameDest)
 	// otevøení souboru
 	fopen_s(&p_mFileDest, p_mchFileNameDest, "w");
 
-	// !!! tady dodìlat test zda je otevøeno
+	// test zda se vše otevøe
+	if (p_mchFileNameSource == NULL || p_mchFileNameDest == NULL)
+	{
+		// zavøít soubory
+		CloseFile();
+		return false;
+	}
 
-	return false;
+	return true;
 }
 
 // zavøe soubor
@@ -61,12 +67,59 @@ bool clsCrypto::CloseFile()
 
 bool clsCrypto::Crypt()
 {
+	unsigned char lchBuffer;
+	int lintCount;
+	
 	// test zda je soubor otevøen
 	if (p_mFileSource == NULL || p_mFileDest == NULL)
 	{
 		return false;
 	}
 
+	do
+	{ 
+		// ètení jednoho byte ze souboru
+		lintCount = fread_s(&lchBuffer, 1, 1, 1, p_mFileSource);
+
+		// jsem na konci souboru
+		if (lintCount == 0) break;
+
+		// šifrování
+		lchBuffer = lchBuffer + Crypter;
+
+		// zápis jednoho byte ze souboru
+		fwrite(&lchBuffer, 1, 1, p_mFileDest);
+	} while (lchBuffer != EOF); // EOF - End Of File
+	
+
+	return false;
+}
+
+bool clsCrypto::Decrypt()
+{
+	unsigned char lchBuffer;
+	int lintCount;
+
+	// test zda je soubor otevøen
+	if (p_mFileSource == NULL || p_mFileDest == NULL)
+	{
+		return false;
+	}
+
+	do
+	{
+		// ètení jednoho byte ze souboru
+		lintCount = fread_s(&lchBuffer, 1, 1, 1, p_mFileSource);
+
+		// jsem na konci souboru
+		if (lintCount == 0) break;
+
+		// šifrování
+		lchBuffer = lchBuffer - Crypter;
+
+		// zápis jednoho byte ze souboru
+		fwrite(&lchBuffer, 1, 1, p_mFileDest);
+	} while (lchBuffer != EOF); // EOF - End Of File
 
 
 	return false;
