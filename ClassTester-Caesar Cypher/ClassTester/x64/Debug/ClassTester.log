@@ -1,0 +1,11 @@
+﻿  ClassTester.cpp
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.h(4,10): warning C4067: Po direktivě preprocesoru byly neočekávané tokeny – očekával se nový řádek.
+  clsCrypto.cpp
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.h(4,10): warning C4067: Po direktivě preprocesoru byly neočekávané tokeny – očekával se nový řádek.
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.cpp(17,21): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.cpp(25,21): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.cpp(82,22): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+C:\Users\benesmartin\source\repos\ClassTester\ClassTester\clsCrypto.cpp(112,22): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+  clsCryptoEx.cpp
+  Generování kódu...
+  ClassTester.vcxproj -> C:\Users\benesmartin\source\repos\ClassTester\x64\Debug\ClassTester.exe
