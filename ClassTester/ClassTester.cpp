@@ -10,10 +10,19 @@ int main()
         p_lobjCryptoEx = new clsCryptoEx();
 
         // otevřít soubor
-        p_lobjCryptoEx->OpenFile(L"c:\\Temp\\test.txt", L"c:\\Temp\\testcrypt.txt");
+        p_lobjCryptoEx->OpenFile(L"c:\\temp\\test.txt", L"c:\\temp\\testcrypt.txt");
 
         // zašifrovat
         p_lobjCryptoEx->Crypt();
+
+        // zavřít soubor
+        p_lobjCryptoEx->CloseFile();
+
+        // otevřít soubor
+        p_lobjCryptoEx->OpenFile(L"c:\\temp\\testcrypt.txt", L"c:\\temp\\testdecrypt.txt");
+
+        // odšifrovat
+        p_lobjCryptoEx->Decrypt();
 
         // zavřít soubor
         p_lobjCryptoEx->CloseFile();

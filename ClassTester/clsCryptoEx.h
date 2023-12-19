@@ -13,4 +13,6 @@ public:
 private:
 	PBYTE p_mSourceFirstByte;
 	HANDLE hFile, hFileMapping;
+	LARGE_INTEGER pintFileSize;
+	DWORD dwBytesWritten;
 };
