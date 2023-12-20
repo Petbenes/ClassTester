@@ -18,6 +18,15 @@ int main()
         // zavřít soubor
         p_lobjCryptoEx->CloseFile();
 
+        // otevřít soubor
+        p_lobjCryptoEx->OpenFile(L"c:\\temp\\testcrypt.txt", L"c:\\temp\\testdecrypt.txt");
+
+        // odšifrovat
+        p_lobjCryptoEx->Decrypt();
+
+        // zavřít soubor
+        p_lobjCryptoEx->CloseFile();
+
         // zrušit objekt
         delete(p_lobjCryptoEx);
 }
